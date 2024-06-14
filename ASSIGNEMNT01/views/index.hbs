@@ -1,0 +1,61 @@
+{{!-- bootstrap classes used to develop structure --}}
+<div
+  class=".container-md p-5 m-5 rounded"
+  style="background-color: rgb(212, 250, 255)"
+  
+>
+  <div class="d-flex justify-content-center text-dark"><div class="m-5 text-dark">
+      <h2>Khushi Patel</h2>
+      <span>Curious Developer, Passionate Web Designer</span>
+      <p><strong>Email:</strong> 200539535@gmail.com </p>
+      <p><strong>Location:</strong> Barrie, ON, Canada</p>
+    </div><img
+      class="rounded-circle m-5"
+      src="/images/u1.png"
+      alt="peson image"
+      height="150"
+      width="150"
+    />
+
+  </div>
+  <div>
+    <p class="text-center text-light font-weight-bold text-dark">I am Curious Developer, Passionate Web Designer !!</p>
+  </div>
+</div>
+
+<div class="container p-5 bg-light" style="width: 80%; margin: 10px auto;">
+  <h2 class="p-3 m-3 text-center container">Organizations I have worked
+    with.......</h2>
+  <div class="row">
+
+    <div class="col p-3" style="">
+      <img
+        src="/images/me.jpg"
+        width="350"
+        alt=""
+      />
+      <h4 style="margin-top: 15px;">OMNI Associate
+      </h4>
+      <p>Walmart, Barrie
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container p-5" style="width: 80%; margin: 10px auto;">
+  <h2 class="p-3 m-3 text-center container">Projects i have worked on.......</h2>
+  <div class="row m-4">
+    {{#each projects}}
+    <div class="col">
+      <img src={{projectImage}} width="300px" alt="" />
+      <h4 style="margin-top: 20px;"><a href={{this.link}}>{{this.projectName}}</a>
+      </h4>
+      <p>{{this.projectDescription}}
+      </p>
+    </div>
+    {{/each}}
+  </div>
+</div>
+<br />
+<br />
+<br />

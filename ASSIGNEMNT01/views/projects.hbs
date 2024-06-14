@@ -1,0 +1,17 @@
+{{!-- bootstrap classes used to create structure  --}}
+<div class="container p-5" style="width: 80%; margin: 10px auto;">
+  <h2 class="p-3 m-3 text-center container">Projects i have worked on.......</h2>
+  <div class="row m-4">
+    {{#each projects}}
+    <div class="col">
+      <img src={{projectImage}} width="300px" alt="" />
+      {{!-- <a href={{this.link}}></a>{{this.projectName}}
+      </a> --}}
+      <h4 style="margin-top: 20px;"><a href={{this.link}}>{{this.projectName}}</a>
+      </h4>
+      <p>{{this.projectDescription}}
+      </p>
+    </div>
+    {{/each}}
+  </div>
+</div>
