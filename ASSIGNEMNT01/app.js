@@ -9,6 +9,7 @@ var projectsRouter = require("./routes/projects");
 var aboutmeRouter = require("./routes/aboutme");
 var contactmeRouter = require("./routes/contactme");
 
+//add express variable 
 var app = express();
 
 // view engine setup
