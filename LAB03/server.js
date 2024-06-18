@@ -1,43 +1,49 @@
+//LAB-03 : Khushi Patel
+//200539535
+
 const connect = require('connect');
 const url = require('url');
 
 const app = connect();
 
-function calculate(req, res, next) {
-    const query = url.parse(req.url, true).query;
-    const method = query.method;
-    const x = parseFloat(query.x);
-    const y = parseFloat(query.y);
-    let result;
-    let operation;
+// Defining the calculate function
+function calculate(req, res) {
+  const query = url.parse(req.url, true).query;
+  const method = query.method;
+  const x = parseFloat(query.x);
+  const y = parseFloat(query.y);
 
-    switch (method) {
-        case 'add':
-            result = x + y;
-            operation = '+';
-            break;
-        case 'subtract':
-            result = x - y;
-            operation = '-';
-            break;
-        case 'multiply':
-            result = x * y;
-            operation = '*';
-            break;
-        case 'divide':
-            result = x / y;
-            operation = '/';
-            break;
-        default:
-            res.end('Error: Invalid method');
-            return;
-    }
+  let result;
 
-    res.end(`${x} ${operation} ${y} = ${result}`);
+  switch (method) {
+    case 'add':
+      result = x + y;
+      break;
+    case 'subtract':
+      result = x - y;
+      break;
+    case 'multiply':
+      result = x * y;
+      break;
+    case 'divide':
+      if (y === 0) {
+        res.end('Error: Division by zero');
+        return;
+      }
+      result = x / y;
+      break;
+    default:
+      res.end('Error: Invalid method');
+      return;
+  }
+
+  res.end(`${x} ${method} ${y} = ${result}`);
 }
 
+// Handle requests
 app.use('/lab2', calculate);
 
+// Start the server on port 3000
 app.listen(3000, () => {
-    console.log('Server running at http://localhost:3000/');
+  console.log('Server is running on http://localhost:3000');
 });
