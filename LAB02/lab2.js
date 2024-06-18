@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 const prompt = require('prompt');
 
 // Create a schema for the prompt
@@ -57,7 +57,7 @@ prompt.get(schema, (err, result) => {
 
   console.log(`Outcome: ${outcome}`);
 });
-=======
+
 const prompt = require('prompt');
 
 // Create a schema for the prompt
@@ -116,4 +116,4 @@ prompt.get(schema, (err, result) => {
 
   console.log(`Outcome: ${outcome}`);
 });
->>>>>>> a98f88f661b8711c05adf9ac1cdfbf825a37df8a
+
