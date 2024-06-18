@@ -1,3 +1,5 @@
+//Name : Khushi Patel 
+
 const prompt = require('prompt');
 
 // Create a schema for the prompt
